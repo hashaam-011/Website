@@ -35,7 +35,7 @@ export function Preloader() {
                         className="relative w-64 h-32 md:w-80 md:h-40"
                     >
                         <Image
-                            src="/logo.png"
+                            src="/big-logo.jpg"
                             alt="NanTech Logo"
                             fill
                             className="object-contain"

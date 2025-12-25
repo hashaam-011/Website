@@ -39,7 +39,7 @@ export function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     {/* Desktop Logo */}
-                    <div className="relative hidden md:block w-[160px] h-[60px]">
+                    <div className="relative hidden md:block w-[200px] h-[80px]">
                         <Image
                             src="/big-logo.jpg"
                             alt="NanTech"
@@ -50,7 +50,7 @@ export function Navbar() {
                     </div>
 
                     {/* Mobile Logo */}
-                    <div className="relative block md:hidden w-[120px] h-[50px]">
+                    <div className="relative block md:hidden w-[150px] h-[60px]">
                         <Image
                             src="/small-logo.jpg"
                             alt="NanTech"
