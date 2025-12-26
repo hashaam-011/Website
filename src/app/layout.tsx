@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { ScrollControls } from "@/components/ui/scroll-controls";
+import { ChatBot } from "@/components/chat-bot";
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -29,6 +30,7 @@ export default function RootLayout({
         <main className="min-h-screen pt-20">
           {children}
         </main>
+        <ChatBot />
         <Footer />
       </body>
     </html>

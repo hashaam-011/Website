@@ -37,7 +37,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-primary" />
-                                <span>NanTechHub@gamil.com</span>
+                                <span>info@nantechs.com</span>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@ export function Footer() {
                                     <Facebook className="w-5 h-5" />
                                 </Button>
                             </Link>
-                            <Link href="https://www.linkedin.com/in/n-z-a3856188/" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://www.linkedin.com/in/naina-zaman-566a05285/" target="_blank" rel="noopener noreferrer">
                                 <Button variant="ghost" size="sm" className="w-10 h-10 p-0 rounded-full">
                                     <Linkedin className="w-5 h-5" />
                                 </Button>
@@ -60,7 +60,7 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-                    <p>© 2024 NanTech. All rights reserved.</p>
+                    <p>© 2026 NanTech. All rights reserved.</p>
                     <div className="flex gap-8">
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

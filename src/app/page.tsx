@@ -55,67 +55,65 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        {/* Abstract Background */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[0%] left-[-10%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" />
-        </div>
+      <section className="relative pt-10 pb-20 md:pt-20 md:pb-32 overflow-hidden">
 
-        <div className="container mx-auto px-6 text-center">
-          {/* Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="mb-16 relative w-full max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-          >
-            <Image
-              src="/images/hero-banner.jpg"
-              alt="NanTech Dashboard"
-              fill
-              className="object-contain"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            className="flex flex-col items-center max-w-4xl mx-auto"
-          >
-            <motion.h1
-              variants={itemVariants}
-              className="text-3xl md:text-5xl font-bold tracking-tight mb-8"
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content - Starts Left on Desktop */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1"
             >
-              YOUR <span className="text-gradient-primary">IT & AI</span> HUB!
-            </motion.h1>
+              <motion.h1
+                variants={itemVariants}
+                className="text-3xl md:text-5xl font-bold tracking-tight mb-6"
+              >
+                YOUR <span className="text-gradient-primary">IT & AI</span> HUB!
+              </motion.h1>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed"
-            >
-              NanTech is a mission-driven IT and AI consulting firm focused on software
-              development, project and program management, and AI-powered solutions. We
-              help organizations translate ideas into execution by combining technical expertise,
-              disciplined delivery, and responsible AI—empowering teams, educators, and
-              communities to thrive in the digital age.            </motion.p>
+              <motion.p
+                variants={itemVariants}
+                className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed"
+              >
+                NanTech is a mission-driven IT and AI consulting firm focused on software
+                development, project and program management, and AI-powered solutions. We
+                help organizations translate ideas into execution by combining technical expertise,
+                disciplined delivery, and responsible AI—empowering teams, educators, and
+                communities to thrive in the digital age.
+              </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-              <Link href="#contact">
-                <Button size="lg" className="w-[160px]">
-                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-              <Link href="/services">
-                <Button size="lg" variant="outline" className="w-[160px]">
-                  Learn More
-                </Button>
-              </Link>
+              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+                <Link href="#contact">
+                  <Button size="lg" className="w-[160px]">
+                    Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+                <Link href="/services">
+                  <Button size="lg" variant="outline" className="w-[160px]">
+                    Learn More
+                  </Button>
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Hero Image - Right on Desktop */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="relative w-full mx-auto aspect-[4/3] rounded-2xl overflow-hidden order-1 lg:order-2"
+            >
+              <Image
+                src="/images/hero-banner.jpg"
+                alt="NanTech Dashboard"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 

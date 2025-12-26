@@ -30,23 +30,17 @@ export default function AboutPage() {
         <div className="flex flex-col min-h-screen">
 
 
-            {/* Hero / Header */}
-            <section className="pt-32 pb-20 relative overflow-hidden">
+            {/* Hero / Vision Section */}
+            <section className="pt-32 pb-12 relative overflow-hidden">
                 <div className="container mx-auto px-6">
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={containerVariants}
-                        className="max-w-4xl mx-auto text-center"
-                    >
-                        <motion.h1 variants={itemVariants} className="text-3xl md:text-5xl font-bold mb-6">
-                            About <span className="text-gradient-primary">NanTech</span>
-                        </motion.h1>
-                        <motion.p variants={itemVariants} className="text-xl text-muted-foreground leading-relaxed mb-12">
-                            Nantech is a woman-owned, minority-owned company, a Small Disadvantaged Business (SDB), and a HUBZone Business dedicated to delivering innovative solutions.
-                        </motion.p>
-
-                        <motion.div variants={itemVariants} className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Image */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="relative w-full aspect-square md:aspect-video lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
+                        >
                             <Image
                                 src="/images/about-us.jpg"
                                 alt="About NanTech"
@@ -55,89 +49,67 @@ export default function AboutPage() {
                                 priority
                             />
                         </motion.div>
-                    </motion.div>
+
+                        {/* Right Column: Content */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="flex flex-col justify-center"
+                        >
+                            <h1 className="text-3xl md:text-5xl font-bold mb-6">
+                                Our <span className="text-gradient-primary">Vision</span>
+                            </h1>
+                            <h2 className="text-xl md:text-2xl font-semibold mb-6 text-primary">
+                                Founded on Execution, Responsibility, and Impact
+                            </h2>
+                            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                                <p>
+                                    NanTech was founded by a technology leader with deep experience in software delivery, project and program management, and applied AI solutions across complex, high-stakes environments.
+                                </p>
+                                <p>
+                                    With a background spanning enterprise systems, public-sector initiatives, and AI-driven innovation, NanTech’s founder brings a disciplined, execution-first approach—ensuring that strategy translates into reliable, real-world results. This leadership philosophy shapes every engagement, emphasizing accountability, ethical technology, and long-term value.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
                 <div className="absolute right-0 top-0 w-1/3 h-full bg-primary/5 blur-3xl -z-10" />
             </section>
 
-            {/* Corporate Info & Vision */}
-            <section className="py-12">
+            {/* Certifications & DUNS */}
+            <section className="py-12 bg-white/5">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-
-                        {/* Mission/Description */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="space-y-6"
-                        >
-                            <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
-                                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                                    <Globe className="text-primary" /> Who We Are
-                                </h3>
-                                <p className="text-muted-foreground mb-4">
-                                    With a commitment to excellence and diversity, Nantech leverages its unique perspectives and expertise to provide high-quality services and products that meet the evolving needs of its clients.
-                                </p>
-                                <p className="text-muted-foreground">
-                                    The company prides itself on fostering an inclusive environment and driving growth through cutting-edge strategies and a customer-centric approach.
-                                </p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="max-w-4xl mx-auto"
+                    >
+                        <div className="p-8 rounded-2xl bg-primary/10 border border-primary/20">
+                            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 justify-center">
+                                <Award className="text-primary" /> Certifications & Identifier Numbers
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {[
+                                    { label: "DUNS #", value: "080494890" },
+                                    { label: "Woman-Owned Small Business #", value: "834882" },
+                                    { label: "Minority-Owned Business #", value: "834882" },
+                                    { label: "Small Disadvantaged Business", value: "(SDB)" },
+                                    { label: "HUBZone Business", value: "" },
+                                    { label: "PMP Certification #", value: "1877847" },
+                                    { label: "CSM (Scrum Master) #", value: "924516" },
+                                ].map((item, index) => (
+                                    <div key={index} className="flex items-center gap-3 bg-background/50 p-3 rounded-lg border border-white/5">
+                                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                        <span className="font-medium text-muted-foreground">
+                                            {item.label} <span className="text-foreground">{item.value}</span>
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
-
-                            <div className="p-6 rounded-2xl bg-primary/10 border border-primary/20">
-                                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                                    <Award className="text-primary" /> Certifications & DUNS
-                                </h3>
-                                <div className="space-y-3">
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                                        <span>DUNS #080494890</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                                        <span>Woman-Owned Small Business #834882</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                                        <span>Minority-Owned Business #834882</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                                        <span>Small Disadvantaged Business (SDB)</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                                        <span>HUBZone Business</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                                        <span>PMP Certification #1877847</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                                        <span>CSM (Scrum Master) #924516</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Vision */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="flex flex-col justify-center"
-                        >
-                            <div className="relative">
-                                <div className="absolute -left-4 -top-4 w-20 h-20 bg-primary/20 rounded-full blur-2xl" />
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">Our Vision</h2>
-                                <p className="text-lg text-muted-foreground leading-relaxed mb-8 relative z-10">
-                                    Nantech's vision is to be a leader in innovation, recognized for our commitment to diversity, excellence, and transformative solutions that shape the future. We aspire to create lasting impact by driving growth and sustainability for our clients and contributing positively to the global community.
-                                </p>
-                                <Shield className="w-32 h-32 text-white/5 absolute bottom-0 right-0 rotate-12" />
-                            </div>
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 

@@ -71,13 +71,13 @@ export default function ServiceDetailPage() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+            <section className="relative pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
                 <div className="container mx-auto px-6">
-                    <Link href="/services" className="inline-flex items-center text-primary mb-8 hover:underline">
+                    <Link href="/services" className="inline-flex items-center text-primary mb-6 hover:underline">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
                     </Link>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         <div>
                             <h1 className="text-4xl md:text-6xl font-bold mb-6">
                                 {service.title}
@@ -94,15 +94,16 @@ export default function ServiceDetailPage() {
                                 ))}
                             </div>
                         </div>
-                        <div className="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden glass-card border-0 shadow-2xl">
+                        <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden glass-card border-0 shadow-2xl">
                             <Image
                                 src={service.image}
                                 alt={service.title}
-                                fill
-                                className="object-cover"
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                className="w-full h-auto"
                                 priority
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         </div>
                     </div>
                 </div>
