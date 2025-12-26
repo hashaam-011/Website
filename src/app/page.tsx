@@ -55,9 +55,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-6 pb-16 md:pt-12 md:pb-24 overflow-hidden">
+      <section className="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col gap-6 items-center">
+          <div className="flex flex-col gap-4 items-center">
             {/* Text Content - Below Image */}
             <motion.div
               initial="hidden"
@@ -67,14 +67,14 @@ export default function Home() {
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-2xl md:text-4xl font-bold tracking-tight mb-6"
+                className="text-xl md:text-3xl font-bold tracking-tight mb-4"
               >
                 YOUR <span className="text-gradient-primary">IT & AI</span> HUB!
               </motion.h1>
 
               <motion.p
                 variants={itemVariants}
-                className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed"
+                className="text-base md:text-lg text-muted-foreground mb-6 max-w-2xl leading-relaxed"
               >
                 NanTech is a mission-driven IT and AI consulting firm focused on software
                 development, project and program management, and AI-powered solutions. We
@@ -85,12 +85,12 @@ export default function Home() {
 
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
                 <Link href="#contact">
-                  <Button size="lg" className="w-[160px]">
+                  <Button size="md" className="w-[140px]">
                     Get Started <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
                 <Link href="/services">
-                  <Button size="lg" variant="outline" className="w-[160px]">
+                  <Button size="md" variant="outline" className="w-[140px]">
                     Learn More
                   </Button>
                 </Link>
@@ -102,7 +102,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="relative w-full max-w-5xl mx-auto aspect-[24/9] rounded-2xl overflow-hidden order-1"
+              className="relative w-full max-w-3xl mx-auto aspect-[24/9] rounded-2xl overflow-hidden order-1"
             >
               <Image
                 src="/images/hero-banner-updated.jpg"
